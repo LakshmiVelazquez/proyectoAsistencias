@@ -27,7 +27,7 @@
             <aside id="sidebar-wrapper">
                 <div class="sidebar-brand">
                     <a href="{{ route('appIndex') }}"> <img alt="image" src="{{ asset('img/logo.png') }}" class="header-logo" /> <span
-                        class="logo-name">Lisca</span>
+                        class="logo-name">Kiddy</span>
                     </a>
                 </div>
                 <ul class="sidebar-menu">

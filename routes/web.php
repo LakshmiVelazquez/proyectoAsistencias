@@ -62,15 +62,15 @@ Route::get('/generateExcelasistencias', [
     'as' => 'asistenciasgenerateExcelasistencias'
 ]);
 
-Route::group(["prefix" => "/app", 'middleware' => ['auth','revalidate']], function () {
+Route::group(["prefix" => "/app", 'middleware' => ['auth', 'revalidate']], function () {
     Route::get('/', [
         'uses' => 'App\Http\Controllers\AppController@index',
         'as' => 'appIndex'
     ]);
 
-    
-    Route::group(["prefix" => "/catalogos", 'middleware' => ['auth','revalidate']], function () {
-        Route::group(["prefix" => "/materias", 'middleware' => ['auth','revalidate']], function () {
+
+    Route::group(["prefix" => "/catalogos", 'middleware' => ['auth', 'revalidate']], function () {
+        Route::group(["prefix" => "/materias", 'middleware' => ['auth', 'revalidate']], function () {
             Route::get('/', [
                 'uses' => 'App\Http\Controllers\Administrador\Catalogos\MateriasController@index',
                 'as' => 'materiasIndex'
@@ -100,7 +100,7 @@ Route::group(["prefix" => "/app", 'middleware' => ['auth','revalidate']], functi
                 'as' => 'materiasInformacion'
             ]);
         });
-        Route::group(["prefix" => "/grupos", 'middleware' => ['auth','revalidate']], function () {
+        Route::group(["prefix" => "/grupos", 'middleware' => ['auth', 'revalidate']], function () {
             Route::get('/', [
                 'uses' => 'App\Http\Controllers\Administrador\Catalogos\GruposController@index',
                 'as' => 'gruposIndex'
@@ -140,7 +140,7 @@ Route::group(["prefix" => "/app", 'middleware' => ['auth','revalidate']], functi
                 'as' => 'gruposMaterias'
             ]);
         });
-        Route::group(["prefix" => "/alumnos", 'middleware' => ['auth','revalidate']], function () {
+        Route::group(["prefix" => "/alumnos", 'middleware' => ['auth', 'revalidate']], function () {
             Route::get('/', [
                 'uses' => 'App\Http\Controllers\Administrador\Catalogos\AlumnosController@index',
                 'as' => 'alumnosIndex'
@@ -180,7 +180,7 @@ Route::group(["prefix" => "/app", 'middleware' => ['auth','revalidate']], functi
                 'as' => 'alumnosDatosPadre'
             ]);
         });
-        Route::group(["prefix" => "/maestros", 'middleware' => ['auth','revalidate']], function () {
+        Route::group(["prefix" => "/maestros", 'middleware' => ['auth', 'revalidate']], function () {
             Route::get('/', [
                 'uses' => 'App\Http\Controllers\Administrador\Catalogos\MaestrosController@index',
                 'as' => 'maestrosIndex'
@@ -224,7 +224,7 @@ Route::group(["prefix" => "/app", 'middleware' => ['auth','revalidate']], functi
                 'as' => 'maestrosmaterias'
             ]);
         });
-        Route::group(["prefix" => "/usuarios", 'middleware' => ['auth','revalidate']], function () {
+        Route::group(["prefix" => "/usuarios", 'middleware' => ['auth', 'revalidate']], function () {
             Route::get('/', [
                 'uses' => 'App\Http\Controllers\Administrador\Catalogos\UsuariosController@index',
                 'as' => 'usuariosIndex'
@@ -256,7 +256,7 @@ Route::group(["prefix" => "/app", 'middleware' => ['auth','revalidate']], functi
         });
     });
 
-    Route::group(["prefix" => "/asistencias", 'middleware' => ['auth','revalidate']], function () {
+    Route::group(["prefix" => "/asistencias", 'middleware' => ['auth', 'revalidate']], function () {
         Route::get('/', [
             'uses' => 'App\Http\Controllers\AsistenciasController@index',
             'as' => 'appAsistencias'
@@ -273,8 +273,8 @@ Route::group(["prefix" => "/app", 'middleware' => ['auth','revalidate']], functi
         ]);
     });
 
-    
-    Route::group(["prefix" => "/configuraciones", 'middleware' => ['auth','revalidate']], function () {
+
+    Route::group(["prefix" => "/configuraciones", 'middleware' => ['auth', 'revalidate']], function () {
         Route::get('/', [
             'uses' => 'App\Http\Controllers\ConfiguracionesController@index',
             'as' => 'appConfiguraciones'

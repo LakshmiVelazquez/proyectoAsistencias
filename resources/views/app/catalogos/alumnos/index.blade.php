@@ -43,6 +43,8 @@
                                             <th>Matricula</th>
                                             <th>Teléfono</th>
                                             <th>Grupo(s)</th>
+                                            <th>Predicción Rendimiento</th>
+                                            <th>QR</th>
                                             <th width="10%">Acciones</th>
                                         </tr>
                                     </thead>
@@ -58,6 +60,8 @@
                                                         <li>{{ $grupo->grupo->nombre }}</li>
                                                     @endforeach
                                                 </td>
+                                                <td style="color: purple; font-weight: bold;">{{ $alumno->predicted }}</td>
+                                                <td>{!! QrCode::size(50)->generate('http://192.168.1.72/proyectoAsistencias/public/api/assistance/' . $alumno->id) !!}</td>
                                                 <td class="text-center">
                                                     <a href="{{ route('alumnosInformacion',$alumno->id) }}" class="text h2">
                                                         <i class="fas fa-eye"></i>
